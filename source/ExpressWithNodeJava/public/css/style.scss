@@ -1,0 +1,26 @@
+html, body {
+  height: 100%;
+}
+
+.starter-template {
+  margin-top: 55px;
+
+  .action-container {
+    .btn {
+      margin-right: 10px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  .result-container {
+    padding-top: 10px;
+
+    textarea {
+      outline: none;
+      width: 100%;
+    }
+  }
+}

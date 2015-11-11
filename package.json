@@ -1,0 +1,31 @@
+{
+  "name": "playnode2015",
+  "version": "0.0.1",
+  "description": "Playnode 2015 presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjuni/myplaynode.git"
+  },
+  "author": "ByungJoon Lee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/imjuni/myplaynode/issues"
+  },
+  "homepage": "https://github.com/imjuni/myplaynode#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-data": "^1.2.0",
+    "gulp-jade": "^1.1.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.1.0",
+    "gulp-serve": "^1.2.0",
+    "run-sequence": "^1.1.4"
+  }
+}

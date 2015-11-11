@@ -1,0 +1,129 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+
+@import url(/components/playnode/playnode/css/notosanskr.min.css);
+@import url(/components/playnode/playnode/css/kopubbatang.min.css);
+@import url(/components/playnode/playnode/css/jejuhallasan.min.css);
+@import url(/components/playnode/playnode/css/nanumpenscript.min.css);
+
+body {
+  overflow: auto;
+
+  .reveal {
+    h1, h2, h3, h4, h5, h6 {
+      &:lang(kr) {
+        text-transform: none;
+        font-family: "Local Noto Sans KR", Ubuntu, "sans-serif";
+      }
+    }
+  }
+}
+
+.reveal-hide {
+  display: none;
+}
+
+.blood-red-text {
+  $base-color: darken(#a23, 5%);
+  $base-color-darken: darken($base-color, 20%);
+
+  color: $base-color !important;
+
+  &.shadow {
+    text-shadow: 0 1px 0 $base-color,
+      0 2px 0 darken($base-color, 2%),
+      0 3px 0 darken($base-color, 4%),
+      0 4px 0 darken($base-color, 8%),
+      0 5px 0 darken($base-color, 10%),
+      0 6px 1px rgba($base-color, .1),
+      0 0 5px rgba($base-color-darken, .1),
+      0 1px 3px rgba($base-color-darken, .3),
+      0 3px 5px rgba($base-color-darken, .2),
+      0 5px 10px rgba($base-color-darken, .25),
+      0 20px 20px rgba($base-color-darken, .15);
+  }
+}
+
+.pink-red-text {
+  $base-color: darken(#ed7487, 5%);
+  $base-color-darken: darken($base-color, 20%);
+
+  color: $base-color !important;
+
+  &.shadow {
+    text-shadow: 0 1px 0 $base-color,
+    0 2px 0 darken($base-color, 2%),
+    0 3px 0 darken($base-color, 4%),
+    0 4px 0 darken($base-color, 8%),
+    0 5px 0 darken($base-color, 10%),
+    0 6px 1px rgba($base-color, .1),
+    0 0 5px rgba($base-color-darken, .1),
+    0 1px 3px rgba($base-color-darken, .3),
+    0 3px 5px rgba($base-color-darken, .2),
+    0 5px 10px rgba($base-color-darken, .25),
+    0 20px 20px rgba($base-color-darken, .15);
+  }
+}
+
+//$heading1TextShadow:
+//        0 1px 0 #ccc,
+//        0 2px 0 #c9c9c9,
+//        0 3px 0 #bbb,
+//        0 4px 0 #b9b9b9,
+//        0 5px 0 #aaa,
+//        0 6px 1px rgba(0,0,0,.1),
+//        0 0 5px rgba(0,0,0,.1),
+//        0 1px 3px rgba(0,0,0,.3),
+//        0 3px 5px rgba(0,0,0,.2),
+//        0 5px 10px rgba(0,0,0,.25),
+//        0 20px 20px rgba(0,0,0,.15);
+
+.style-nanumpenscript {
+  font-family: "Local Nanum Pen Script" !important;
+
+  h1, h2, h3, h4, h5, h6, p, pre, code, ul, li {
+    font-family: "Local Nanum Pen Script" !important;
+    //font-weight: 300 !important; // 300, 400, 700
+  }
+}
+
+.style-kopubtatang {
+  font-family: "Local KoPub Batang" !important;
+
+  h1, h2, h3, h4, h5, h6, p, pre, code, ul, li {
+    font-family: "Local KoPub Batang" !important;
+    //font-weight: 300 !important; // 300, 400, 700
+  }
+}
+
+.style-jejuhallasan {
+  font-family: "Local Jeju Hallasan" !important;
+
+  h1, h2, h3, h4, h5, h6, p, pre, code, ul, li {
+    font-family: "Local Jeju Hallasan" !important;
+  }
+  //font-weight: 400 !important;
+}
+
+.style-notosanskr {
+  font-family: "Local Noto Sans KR" !important;
+
+  h1, h2, h3, h4, h5, h6, p, pre, code, ul, li {
+    font-family: "Local Noto Sans KR" !important;
+    //font-weight: 300 !important; // 300, 400, 700
+  }
+}
+
+.list-style {
+  li {
+    margin-bottom: 10px;
+
+    ul {
+      li {
+        font-size: 28px;
+      }
+    }
+  }
+}

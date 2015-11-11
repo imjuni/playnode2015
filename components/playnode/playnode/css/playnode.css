@@ -1,0 +1,51 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url(http://fonts.googleapis.com/earlyaccess/kopubbatang.css);
+@import url(http://fonts.googleapis.com/earlyaccess/jejuhallasan.css);
+@import url(http://fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+@import url(/components/playnode/playnode/css/notosanskr.min.css);
+@import url(/components/playnode/playnode/css/kopubbatang.min.css);
+@import url(/components/playnode/playnode/css/jejuhallasan.min.css);
+@import url(/components/playnode/playnode/css/nanumpenscript.min.css);
+body {
+  overflow: auto; }
+  body .reveal h1:lang(kr), body .reveal h2:lang(kr), body .reveal h3:lang(kr), body .reveal h4:lang(kr), body .reveal h5:lang(kr), body .reveal h6:lang(kr) {
+    text-transform: none;
+    font-family: "Local Noto Sans KR", Ubuntu, "sans-serif"; }
+
+.reveal-hide {
+  display: none; }
+
+.blood-red-text {
+  color: #951e2d !important; }
+  .blood-red-text.shadow {
+    text-shadow: 0 1px 0 #951e2d, 0 2px 0 #8c1c2a, 0 3px 0 #841a28, 0 4px 0 #731722, 0 5px 0 #6a1520, 0 6px 1px rgba(149, 30, 45, 0.1), 0 0 5px rgba(64, 13, 19, 0.1), 0 1px 3px rgba(64, 13, 19, 0.3), 0 3px 5px rgba(64, 13, 19, 0.2), 0 5px 10px rgba(64, 13, 19, 0.25), 0 20px 20px rgba(64, 13, 19, 0.15); }
+
+.pink-red-text {
+  color: #ea5d74 !important; }
+  .pink-red-text.shadow {
+    text-shadow: 0 1px 0 #ea5d74, 0 2px 0 #e9546c, 0 3px 0 #e84b64, 0 4px 0 #e53954, 0 5px 0 #e4304d, 0 6px 1px rgba(234, 93, 116, 0.1), 0 0 5px rgba(200, 26, 53, 0.1), 0 1px 3px rgba(200, 26, 53, 0.3), 0 3px 5px rgba(200, 26, 53, 0.2), 0 5px 10px rgba(200, 26, 53, 0.25), 0 20px 20px rgba(200, 26, 53, 0.15); }
+
+.style-nanumpenscript {
+  font-family: "Local Nanum Pen Script" !important; }
+  .style-nanumpenscript h1, .style-nanumpenscript h2, .style-nanumpenscript h3, .style-nanumpenscript h4, .style-nanumpenscript h5, .style-nanumpenscript h6, .style-nanumpenscript p, .style-nanumpenscript pre, .style-nanumpenscript code, .style-nanumpenscript ul, .style-nanumpenscript li {
+    font-family: "Local Nanum Pen Script" !important; }
+
+.style-kopubtatang {
+  font-family: "Local KoPub Batang" !important; }
+  .style-kopubtatang h1, .style-kopubtatang h2, .style-kopubtatang h3, .style-kopubtatang h4, .style-kopubtatang h5, .style-kopubtatang h6, .style-kopubtatang p, .style-kopubtatang pre, .style-kopubtatang code, .style-kopubtatang ul, .style-kopubtatang li {
+    font-family: "Local KoPub Batang" !important; }
+
+.style-jejuhallasan {
+  font-family: "Local Jeju Hallasan" !important; }
+  .style-jejuhallasan h1, .style-jejuhallasan h2, .style-jejuhallasan h3, .style-jejuhallasan h4, .style-jejuhallasan h5, .style-jejuhallasan h6, .style-jejuhallasan p, .style-jejuhallasan pre, .style-jejuhallasan code, .style-jejuhallasan ul, .style-jejuhallasan li {
+    font-family: "Local Jeju Hallasan" !important; }
+
+.style-notosanskr {
+  font-family: "Local Noto Sans KR" !important; }
+  .style-notosanskr h1, .style-notosanskr h2, .style-notosanskr h3, .style-notosanskr h4, .style-notosanskr h5, .style-notosanskr h6, .style-notosanskr p, .style-notosanskr pre, .style-notosanskr code, .style-notosanskr ul, .style-notosanskr li {
+    font-family: "Local Noto Sans KR" !important; }
+
+.list-style li {
+  margin-bottom: 10px; }
+  .list-style li ul li {
+    font-size: 28px; }

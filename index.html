@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <meta name="description" content="2015 Playnode, ">
+    <meta name="author" conent="ByungJoon Lee">
+    <link rel="stylesheet" href="components/bower/reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="components/bower/reveal.js/css/theme/blood.css">
+    <link rel="stylesheet" href="components/bower/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="components/playnode/playnode/css/playnode.min.css">
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h4>Node.js를 이용해서 Big Data 세계를 헤엄친 이야기</h4>
+          <h5><small>나와 같은 실수를 반복하지 마세요</small></h5>
+          <h5>SK Planet,<small>Data Infrastructure</small></h5>
+          <p>ByungJoon Lee</p>
+        </section>
+        <section class="style-jejuhallasan">
+          <h3>무슨 일을 하고 있어요?</h3>
+          <h5>Big Data Visualization 시스템을 개발합니다</h5>
+        </section>
+        <section>
+          <section data-background="components/playnode/playnode/images/unknown/pic010_2.png">
+            <h1 class="pink-red-text shadow">Big Data ♡?</h1>
+          </section>
+          <section data-transition="concave">
+            <h3>Big Data란,</h3>
+            <p>Wikipedia:</p>
+            <blockquote cite="https://ko.wikipedia.org/wiki/%EB%B9%85_%EB%8D%B0%EC%9D%B4%ED%84%B0">
+              기존 데이터베이스 관리도구로 데이터를 수집, 저장, 관리, 분석할 수 있는 역량을 넘어서는
+              대량의 정형 또는 비정형 데이터 집합 및 이러한 데이터로부터 가치를 추출하고 결과를 분석하는 기술을 의미한다
+            </blockquote>
+          </section>
+          <section data-transition="concave">
+            <h2 class="style-kopubtatang">약간 뜬구름 잡는 느낌, ..</h2>
+            <h5>딱히 정해져 있지 않아요,</h5>
+            <h5>대용량의 데이터를 다루고 저장하는 기술을 통칭하는 것 같습니다</h5>
+            <p><small>Hadoop, Hive, HBase, Impala, Presto, Sentry, Kafka, Zookeeper etc ...</small></p>
+          </section>
+          <section data-transition="concave">
+            <h2>저희 팀에서는</h2>
+            <h5>하루 25억 건 정도의 데이터(로그)가 들어오고</h5>
+            <h5>6 petabyte 정도의 데이터를 저장합니다</h5>
+          </section>
+          <section data-transition="concave">
+            <h3>이런 대용량 데이터를 다루는 것을</h3>
+            <h2><span class="blood-red-text">Big Data</span>라고</h2>
+            <h3>하는 것 같습니다</h3>
+          </section>
+          <section data-background="components/playnode/playnode/images/unknown/pic012_2.png" data-transition="concave">
+            <h2>Big Data</h2>
+            <ul>
+              <li>기존 데이터베이스 관리도구로 수집, 저장, 관리, 분석할 수 있는 역량을 넘어서는 데이터를 다루는 것</li>
+              <li>관련 제품:
+                <ul>
+                  <li>Hadoop, Hive, HBase, Impala, Presto, Sentry, Kafka, Zookeeper etc ..</li>
+                </ul>
+              </li>
+            </ul>
+            <h3 class="pink-red-text">참 쉽죠?</h3>
+          </section>
+        </section>
+        <section>
+          <h3>잘 받아서 잘 저장하고,</h3>
+          <h4>이런 작업도 아주 중요하지만</h4>
+          <h2 class="style-kopubtatang blood-red-text shadow">잘 보여 주는 것</h2>
+          <h4>매우 중요합니다!</h4>
+        </section>
+        <section>
+          <section data-transition="concave">
+            <h3>Data Visualization 시스템이란,</h3>
+          </section>
+          <section>
+            <h1 class="style-kopubtatang blood-red-text shadow">잘 보여 주는 것</h1>
+          </section>
+          <section data-transition="concave">
+            <h2>그래서 잘 보여주는</h2>
+            <h5>R Studio, MSTR, Hue과 같은 도구를</h5>
+            <h5>Data Visualization 도구라고 합니다</h5>
+          </section>
+          <section data-transition="concave">
+            <h3>제가 만든 Data Visualization 도구는</h3>
+          </section>
+          <section data-transition="concave" class="style-jejuhallasan">
+            <h3>보다 솔직하게 이야기를 하면,</h3><img src="components/playnode/playnode/images/unknown/pic005.png">
+          </section>
+          <section data-transition="concave" class="style-kopubtatang">
+            <h2>그냥 쿼리를</h2>
+            <h2>실행하는 도구에요,...</h2>
+          </section>
+          <section data-transition="concave">
+            <h3>이런 느낌??</h3><img src="components/playnode/playnode/images/mine/pic001.png">
+          </section>
+          <section data-background="components/playnode/playnode/images/mine/pic003_2.png" data-transition="concave">
+            <h2>최근 로그가</h2>
+            <h4>아주 다양한 곳에서 유입되고,</h4>
+            <h5>로그 양이 많아지면 hadoop에 쌓는 경우가 많지요</h5>
+          </section>
+          <section data-transition="concave">
+            <h2>hadoop에 쌓이면,</h2>
+            <h4>hive를 hadoop에 붙이고,</h4>
+            <h5><small>이와 같은 도구를 이용해서 즉시 데이터를 조회할 필요성이 생깁니다</small></h5>
+          </section>
+          <section data-transition="concave">
+            <h4>잘 쌓은 로그를 이용해서</h4>
+            <h2>UV, PV</h2>
+            <h3>쿼리 한 방에 뽑으면 얼마나 편할까요?</h3>
+            <p><small>☆ Big Data에서!</small></p>
+          </section>
+          <section data-transition="concave" class="style-kopubtatang">
+            <h1>그래서</h1>
+            <h2>이런 시스템이 필요합니다</h2>
+            <h6><small>궁서체 입니다 ;)</small></h6>
+          </section>
+          <section data-transition="concave" class="style-jejuhallasan">
+            <div style="display: flex; flex-direction: row" class="container">
+              <div style="flex: 1;" class="left">
+                <h2>근데 hue가</h2>
+                <h2>비슷한 일을 하거든요</h2>
+              </div>
+              <div style="flex: 1;" class="right"><img src="components/playnode/playnode/images/mine/pic002.png">
+                <h5><small>모양도 비슷하죠?</small></h5>
+              </div>
+            </div>
+          </section>
+          <section data-background="components/playnode/playnode/images/unknown/pic006.jpg" data-transition="concave" class="style-kopubtatang">
+            <h1 style="color: #CE2323;" class="blood-red-text shadow">개인정보보호법</h1>
+            <h1 style="color: #CE2323;" class="blood-red-text shadow">전자금융거래법</h1>
+          </section>
+          <section data-transition="concave" class="style-kopubtatang">
+            <h4>잘 알려진 도구로는</h4>
+            <h2><span class="blood-red-text">Compliance</span>&nbsp;이슈를</h2>
+            <h5>해결하기 어렵습니다</h5>
+            <p><small>망 분리, WEB & WAS & DB 3 tier 구성, 다운로드 제어, 계정 관련 제약, 접근 로그 보관 등</small><br><small>다양한 조건이 있습니다</small></p>
+          </section>
+          <section data-background="components/playnode/playnode/images/unknown/pic012_2.png" data-transition="concave">
+            <h2>Data Visualization</h2>
+            <ul>
+              <li>잘 쌓인 데이터에서 보물과도 같은 정보를 찾아낼 수 있도록 도와 주는 도구</li>
+              <ul>
+                <li>EDA(Exploratory data analysis)라는 어휘도 있다</li>
+              </ul>
+              <li>기존 시스템은 잘 만들었지만 국내에서는 법적 제약으로 인해 사용이 어렵다</li>
+            </ul>
+            <h3 class="pink-red-text">참 쉽죠?</h3>
+          </section>
+        </section>
+        <section>
+          <h1>그래서</h1>
+          <h2>그냥 만들기로 했습니다</h2>
+        </section>
+        <section>
+          <h4>저는 Java에 조금 알레르기가 있습니다</h4>
+        </section>
+        <section>
+          <h4>그래서 Java를 사용하지 않고 구현하는 방법을 고민했습니다</h4>
+        </section>
+        <section data-background="components/playnode/playnode/images/unknown/pic004_2.png" class="style-nanumpenscript">
+          <h1 class="pink-red-text shadow">그 때</h1>
+          <h2 class="pink-red-text shadow">그(그녀)가</h2>
+          <h3 class="pink-red-text shadow">눈에 들어왔습니다 ♡</h3>
+        </section>
+        <section>
+          <h1>Node.js</h1>
+          <h3>쉬운 문법, 다양한 npm 패키지 등 모든 것을 할 수 있을 것 같았습니다</h3>
+          <p>그렇게 우리는 시작했습니다</p>
+        </section>
+        <section class="style-kopubtatang">
+          <h3>처음에는 간단하게 시작해야죠?</h3><img src="components/playnode/playnode/images/mine/pic004.png">
+        </section>
+        <section data-background="components/playnode/playnode/images/mine/pic004_2.png">
+          <ul class="list-style">
+            <li>Express
+              <ul>
+                <li>WEB, WAS를 동시에 처리</li>
+              </ul>
+            </li>
+            <li>MySQL
+              <ul>
+                <li>영구히 저장되는 정보</li>
+                <li>즐겨찾기, 자주 쓰는 쿼리 저장하기 등</li>
+              </ul>
+            </li>
+            <li>Redis
+              <ul>
+                <li>세션 정보 저장하기</li>
+                <li>실 시간 편집 쿼리 저장하기 등</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>오늘 부터 우리는 1일이야!</h3><img src="components/playnode/playnode/images/unknown/pic001.jpg">
+        </section>
+        <section data-background="components/playnode/playnode/images/unknown/pic013_2.png" data-background-size="300px" data-background-repeat="repeat">
+          <h2>그런데</h2>
+          <h4>Hive에 어떻게 접속하고, 어떻게 자료를 가져오지?</h4>
+        </section>
+        <section>
+          <h1>node-java</h1>
+          <p>Node.js로 개발을 시도한 이유</p>
+        </section>
+        <section>
+          <section data-transition="concave">
+            <h3>Data Visualization을 위해서</h3>
+            <h5>Data retrieval 과정이 필수적이고</h5>
+            <h3>Data retrieval을 위해서</h3>
+            <h5>저희는 Hive에 반드시 접근해야 합니다</h5>
+          </section>
+          <section data-transition="concave">
+            <h4>Hive에 접근하는 가장 쉬운 방법은 역시</h4>
+            <h2>JDBC (for Hive)</h2>
+          </section>
+          <section data-transition="concave">
+            <h2>node-java를 사용하면</h2>
+            <h4>JDBC를 사용할 수 있습니다</h4>
+          </section>
+          <section data-transition="concave">
+            <h3>node-java 좋아요?</h3>
+          </section>
+          <section data-transition="concave">
+            <h3>Java 잘해요?</h3>
+          </section>
+          <section data-transition="concave">
+            <h3>어울리지 않아요</h3>
+          </section>
+          <section data-transition="concave">
+            <h2>참 철 없던 시절,</h2>
+            <h3>별 생각 없이 JDBC 함수를 실행했어요</h3>
+          </section>
+          <section data-transition="concave">
+            <h3>JDBC 함수가 실행되는 동안</h3>
+            <h3>Express 서버가 멈춥니다</h3>
+          </section>
+          <section data-background="components/playnode/playnode/images/unknown/pic008_2.png" data-transition="concave">
+            <h2>node-java에서</h2>
+            <h3><span class="blood-red-text">함수 실행은</span></h3>
+            <h3>그냥 while 문으로 loop을</h3>
+            <h3>실행하는 것과 같습니다</h3>
+          </section>
+          <section data-transition="concave">
+            <h3>처음에 Hive와 Impala를 사용 했는데,</h3>
+          </section>
+          <section data-transition="concave" class="style-jejuhallasan">
+            <h2>(소근소근)</h2>
+            <h3>impala가 초기 버전에서 invalidate metadata를 하다가 종종</h3>
+            <h5><span class="blood-red-text">hang</span>이 걸려서 멈출 때가 있었어요</h5>
+          </section>
+          <section data-transition="concave" class="style-kopubtatang">
+            <h3>node-java를 쓰다가</h3>
+            <h3><span class="blood-red-text">java method에서 hang이 걸리면</span></h3>
+            <h3>Node.js 전체가 hang이 걸립니다</h3>
+          </section>
+          <section data-transition="concave">
+            <h3>이 문제를 해결 하려면</h3>
+            <h4>Java 코드를 추가로 개발해서</h4>
+            <p>JDBC 함수를 호출 할 때 thread를 하나 만든 다음 그 thread에서 jdbc function call을 하고</p>
+            <p>비동기 방식 처럼 바로 결과를 돌려 주고,</p>
+            <p>Node.js에서는 setInterval 등으로 java code를 지속적으로 호출하면서 thread status를 확인하고,</p>
+            <p>실행이 완료되면 결과를 가져와야 합니다</p>
+            <p>만약 실행 시간이 일정 시간 이상 걸리면 취소를 하고 timeout을 내는 코드도 추가 해야 합니다, java로...</p>
+          </section>
+          <section data-transition="concave">
+            <h2>그림으로 보면,</h2><img src="components/playnode/playnode/images/mine/pic005.png">
+          </section>
+          <section data-transition="concave">
+            <h1 class="blood-red-text shadow style-kopubtatang">와,... ,..... [삐- ]</h1><img src="components/playnode/playnode/images/unknown/pic002.png">
+          </section>
+          <section data-transition="concave">
+            <h2>망했어요..</h2>
+          </section>
+          <section data-transition="concave">
+            <h2>node-java는 이 한 가지 이유만으로 버릴만 합니다</h2>
+          </section>
+          <section data-transition="concave">
+            <h4>2015년, 11월 현재 node-java는 개선을 거듭하여</h4>
+            <p>
+              Async, Sync Java Method Call 외
+              Promise Java Method Call 기능이 추가 되었으며 Generator + Promise를 이용하여
+              테스트 한 결과 비동기 호출이 가능해 졌습니다
+            </p>
+            <h2 class="pink-red-text shadow">이 점, 참고 부탁 드려요!</h2>
+          </section>
+          <section data-transition="concave">
+            <h3>그런데,</h3>
+            <h5>설상가상으로 사용자는 JDBC에 없는 요구사항을 요청합니다</h5>
+          </section>
+          <section data-transition="concave">
+            <h2>JDBC 함수가 실행되는 동안</h2>
+            <h4>Hive 로그나 Impala 로그 등 실행되는 동안 상태를 확인하고 싶어 합니다</h4>
+          </section>
+          <section data-transition="concave">
+            <video data-autoplay>
+              <source data-src="components/playnode/playnode/movie/galleon_001.mp4">
+            </video>
+          </section>
+          <section data-background="components/playnode/playnode/images/unknown/pic007.png" data-transition="concave">
+            <h3>모든 것을 해결 할 수 있는 방법이 있습니다</h3>
+            <h5 class="blood-red-text shadow">node-java 군, 넌 해고다</h5>
+          </section>
+          <section data-background="components/playnode/playnode/images/unknown/pic012_2.png" data-transition="concave">
+            <h2>node-java</h2>
+            <ul class="list-style">
+              <li>Node.js에서 java jar, class 파일을 실행할 수 있도록 해주는 package</li>
+              <li>C++, JNI, JDK (for JVM) 사용</li>
+              <li>2015년 11월 기준 괜찮은 선택, 다만
+                <ul>
+                  <li>서버 빌드 여부 확인</li>
+                  <li>JDK & JVM 확인: jar 파일이 Java 8 으로 개발 되었는가? 등</li>
+                  <li>사용할 때는 반드시<span class="blood-red-text">Promise</span>&nbsp;를 이용하여 비동기로 실행</li>
+                </ul>
+              </li>
+            </ul>
+            <h3 class="pink-red-text">참 쉽죠?</h3>
+          </section>
+        </section>
+        <section>
+          <h1>node-thrift</h1>
+        </section>
+        <section>
+          <section data-transition="concave">
+            <h3>Thrift는 Hive에서 제공하는 또 다른 접근법입니다</h3>
+          </section>
+          <section data-transition="concave">
+            <h3>Thrift</h3>
+            <p>https://thrift.apache.org/</p>
+          </section>
+          <section data-transition="concave">
+            <h3>Thrift는</h3>
+            <h4>개발 환경, 언어와 독립된 프로토콜 명세입니다</h4>
+            <h5>그래서 Thrift를 이용하면 다양한 언어로</h5>
+            <h5>프로토콜 구현체를 생성할 수 있습니다</h5>
+            <p><small>
+                Actionscript 3.0, c_glib, C++, CSharp, D, Dart, Delphi,
+                Go, Graphviz, Haxe Framework, Haskell, Java,</small></p>
+            <p>Javascript, Node.js,<small>OCaml, Perl, PHP, Python, Ruby</small></p>
+          </section>
+          <section data-transition="concave">
+            <h2>이런 느낌으로,</h2><img src="components/playnode/playnode/images/unknown/pic014_2.png">
+          </section>
+          <section data-transition="concave">
+            <h2><span class="pink-red-text">Node.js</span>와<span class="pink-red-text">Javascript</span>가</h2>
+            <h2>있으니, 문제 없습니다</h2>
+          </section>
+          <section data-transition="concave">
+            <h3>Hive 서버에 포함된 thrift idl을</h3>
+            <h4>thrift로 컴파일하면 javascript 구현체를 만들 수 있습니다</h4>
+            <pre><code data-trim>sh> brew install thrift
+sh> thrift -r --gen js:node /apache-hive-1.1.0-src/service/if/TCLIService.thrift</code></pre>
+          </section>
+          <section data-transition="concave">
+            <h3>gen-node가 뿅하고 생기고,</h3>
+            <h5>gen-node와 node-thrift를 이용해서 Hive에 접근한 뒤</h5>
+            <ul>
+              <li>쿼리도 실행하고,</li>
+              <li>쿼리 캔슬도 하고,</li>
+              <li>로그도 가져올 수 있습니다</li>
+            </ul>
+          </section>
+          <section data-transition="concave">
+            <h3>로그에 대해서 깨알 첨언을 하자면</h3>
+            <p>Apache Hive 1.0 아래 버전을 사용하면 getLog가 없습니다<small>1.0 이후에 getLog가 추가 되었습니다</small></p>
+          </section>
+          <section data-transition="concave">
+            <h3>만약 Hive 버전이 1.0 아래라면?</h3>
+            <h5>CDH에서 배포하는 Hive를 사용하세요~</h5>
+            <p>gen-node 아래, getLog가 있습니다</p>
+          </section>
+          <section data-transition="concave">
+            <h3>Apache Hive 1.0 이상에서 getLog</h3>
+            <p>vs</p>
+            <h3>CDH Hive 0.13.0 이하에서 getLog</h3>
+            <p>getLog로 받은 buffer를 해석하는 방식이 조금 달라요,</p>
+          </section>
+          <section data-transition="concave">
+            <h2>깨알 첨언 둘,</h2>
+            <h4>NULL field를 처리하는 방법이 따로 있습니다</h4>
+            <p>
+              되돌려 받은 buffer 내에, nulls 값이 있고 이 nulls 값은
+              bit vector 형태로 null 값 인지 아닌지를 확인할 수 있는 값이 들어 있습니다
+            </p><img src="components/playnode/playnode/images/mine/pic006.png">
+          </section>
+          <section data-transition="concave">
+            <h3>코드로 표현하면,</h3>
+            <pre><code data-trim>HS2Util.prototype.getIsNull = function getIsNull (buf, index) {
+  var bufIdx = (index !== 0) ? Math.floor(index / 8) : 0;
+  var pos = index % 8;
+
+  return !!(buf[bufIdx] & this.BITMASK[pos]);
+};</code></pre>
+          </section>
+          <section data-transition="concave">
+            <h3>이 모든 것이 귀찮다면,</h3>
+            <p>https://github.com/imjuni/jshs2</p>
+          </section>
+          <section data-transition="concave">
+            <h2>jshs2는</h2>
+            <h3>이 귀찮은 작업을 모두 해두었지만,</h3>
+            <h4><span class="blood-red-text">인증을 구현하지 않아서</span></h4>
+            <h5>HIVE auth mechanism을 NOSASL로 설정해야 합니다</h5>
+            <p><small>kerberos, plain sasl 등과 같은 인증 수단을 말합니다</small></p>
+          </section>
+          <section data-background="components/playnode/playnode/images/unknown/pic012_2.png" data-transition="concave">
+            <h2>node-thrift</h2>
+            <ul>
+              <li>다른 언어, 플랫폼에서 공통적으로 사용할 수 있는 프로토콜</li>
+              <li>getLog를 사용하기 위해서는 Hive 버전 확인</li>
+              <li>NULL 필드를 다루기 위해서는 bit vector 사용</li>
+              <li>귀찮으면&nbsp;<span class="blood-red-text">JSHS2</span>
+                <ul>
+                  <li>인증은 NOSASL</li>
+                </ul>
+              </li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <h4>와,.. 이제 Hive에 접속할 수 있게 되었어요</h4>
+          <h4>와,.. 이제 Hive에 접속할 수 있게 되었어요</h4>
+          <h6><small>이제, 개발할 수 있겠네요</small></h6>
+          <h6><small>이제, 개발할 수 있겠네요</small></h6><img src="components/playnode/playnode/images/unknown/pic003_2.png">
+        </section>
+        <section>
+          <h4>쿼리를 실행할 때,</h4>
+          <h2>Connection</h2>
+        </section>
+        <section>
+          <section>
+            <h1 class="style-kopubtatang blood-red-text shadow">Connection</h1>
+          </section>
+          <section>
+            <h3>Connection less</h3>
+            <h5>vs</h5>
+            <h3>Persistent Connection</h3>
+          </section>
+          <section>
+            <h1>Impala</h1>
+            <h5>초기 Impala에 직접 접속 할 때,</h5>
+            <p><small>Impala가 충분히 성장하지 않아 Persistent Connection 방식으로<br>연결을 유지하면, Connection이 완전히 정리되지 않고 leak이 되는 문제가 있었다</small></p>
+          </section>
+          <section>
+            <h3>Compliance Issue</h3>
+            <div style="display: flex;" class="split-container">
+              <div style="flex: 1; margin-right: 20px;" class="left">
+                <p>개인정보보호법 때문에 사용자는 가상머신에서 접속하는데,<br><br>보통 가상머신을 종료하지 않고 연결을 끊기만 하기 때문에 쿼리를 실행하고 결과를 보다가<br><br>가상머신과 연결을 끊으면 서버에서는 Connection이 계속 남아서 leak이 된다</p>
+              </div>
+              <div style="flex: 1; justify-content: center; display: flex; align-items: center;" class="right"><img src="components/playnode/playnode/images/mine/pic007.png"></div>
+            </div>
+          </section>
+          <section>
+            <h3>Hue - Persistent Connection</h3>
+            <h5>vs</h5>
+            <h3 class="pink-red-text shadow">Galleon - Connection less</h3>
+            <p><small>제가 만든 것이 Galleon 입니다 ;)</small></p>
+          </section>
+          <section>
+            <h2>Connection less</h2>
+            <h3>반드시 Full-Fetch 과정이 필요</h3>
+          </section>
+          <section>
+            <h3>Full-Fetch!</h3>
+            <h5>쿼리 결과를 모두 Browser에 저장해야 한다!</h5>
+          </section>
+          <section><img src="components/playnode/playnode/images/unknown/pic011.png" style="width: 35%; height: 35%;"></section>
+          <section>
+            <h2 class="style-kopubtatang blood-red-text shadow">생각보다 큰 제약 사항,</h2>
+          </section>
+          <section>
+            <h4>내가 직접 Grid Display Engine을 만들어도 되지만,</h4>
+          </section>
+          <section>
+            <h3>잘 만든 것을 가져다 사용하기로 결정</h3>
+          </section>
+          <section data-transition="none">
+            <h3>Grid</h3>
+            <table style="font-size: 22px;">
+              <thead>
+                <tr>
+                  <th>이름</th>
+                  <th>장점</th>
+                  <th>단점</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SlickGrid.js</td>
+                  <td>
+                    <ul>
+                      <li>수백만 건의 데이터도 빠르게 처리 가능</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>안 이쁘..</li>
+                      <li>여러 줄 출력 불가능</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handsontable 0.10.5</td>
+                  <td>
+                    <ul>
+                      <li>30~40 만 건까지는 합리적인 성능</li>
+                      <li>여러 줄 출력 가능</li>
+                      <li>Excel 닮은 꼴</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>비교적 성가신 버그가 많다</li>
+                      <li>버전이 올라서 고쳐질 확률이 없다</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handsontalbe latest</td>
+                  <td>
+                    <ul>
+                      <li>5~10 만 건까지는 합리적인 성능</li>
+                      <li>여러 줄 출력 가능</li>
+                      <li>Excel 닮은 꼴</li>
+                      <li>많은 버그가 수정 됨</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>명색이 Big Data인데, 10만 건은 너무 작다</li>
+                      <li>30 만건만 실행해도...</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DataTable.js</td>
+                  <td>
+                    <ul>
+                      <li>다양한 부가 기능 (search, paging 등)</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Infinity Row 기능을 켜면 느리다</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+          <section data-transition="none">
+            <h3>Grid</h3>
+            <table style="font-size: 22px;">
+              <thead>
+                <tr>
+                  <th>이름</th>
+                  <th>장점</th>
+                  <th>단점</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>SlickGrid.js</td>
+                  <td>
+                    <ul>
+                      <li>수백만 건의 데이터도 빠르게 처리 가능</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>안 이쁘..</li>
+                      <li>여러 줄 출력 불가능</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr class="pink-red-text">
+                  <td>Handsontable 0.10.5</td>
+                  <td>
+                    <ul>
+                      <li>30~40 만 건까지는 합리적인 성능</li>
+                      <li>여러 줄 출력 가능</li>
+                      <li>Excel 닮은 꼴</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>비교적 성가신 버그가 많다</li>
+                      <li>버전이 올라서 고쳐질 확률이 없다</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Handsontalbe latest</td>
+                  <td>
+                    <ul>
+                      <li>5~10 만 건까지는 합리적인 성능</li>
+                      <li>여러 줄 출력 가능</li>
+                      <li>Excel 닮은 꼴</li>
+                      <li>많은 버그가 수정 됨</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>명색이 Big Data인데, 10만 건은 너무 작다</li>
+                      <li>30 만건만 실행해도...</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DataTable.js</td>
+                  <td>
+                    <ul>
+                      <li>다양한 부가 기능 (search, paging 등)</li>
+                    </ul>
+                  </td>
+                  <td>
+                    <ul>
+                      <li>Infinity Row 기능을 켜면 느리다</li>
+                    </ul>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </section>
+        <section>
+          <h2>Full-Fetch</h2>
+          <h3>데이터 전송은,</h3>
+        </section>
+        <section>
+          <h3>Socket.io</h3>
+          <h5>Node.js Killer package</h5>
+        </section>
+        <section>
+          <h3>이러한 과정을 거쳐서!</h3>
+        </section>
+        <section>
+          <h3>Galleon</h3>
+          <section>
+            <video>
+              <source data-src="components/playnode/playnode/movie/galleon_002.mp4">
+            </video>
+          </section>
+        </section>
+        <section>
+          <h1>고생스럽지만,</h1>
+          <h4>순수 Node.js로</h4>
+          <h3>Hive에 접속, 쿼리 실행 등의</h3>
+          <h3>개발은 좋은 경험</h3>
+        </section>
+        <section>
+          <h3>그런데, 나를</h3>
+          <h2><span class="blood-red-text shadow style-kopubtatang">분노</span></h2>
+          <h3>하게 한 것 들은 없는가?</h3>
+        </section>
+        <section>
+          <section class="style-kopubtatang">
+            <h1 class="blood-red-text shadow">Excel</h1>
+            <h5 class="blood-red-text shadow">영원한 나의 적</h5>
+          </section>
+          <section>
+            <h2>개인정보보호법</h2>
+            <h5>파일이&nbsp;<span class="blood-red-text">파일시스템에 스치는 것&nbsp;</span>조차 불허</h5>
+            <h5>모두 메모리에서 처리</h5>
+          </section>
+          <section>
+            <h3>다량의 데이터가 Node.js에서 머무르고,</h3>
+            <h4>다량의 loop을 수행하며 Excel XML을 생성하고,</h4>
+            <h2 class="style-kopubtatang blood-red-text shadow">Node.js에 부적합</h2>
+          </section>
+        </section>
+        <section>
+          <h2>그래서</h2>
+        </section>
+        <section data-background="components/playnode/playnode/images/unknown/pic012_2.png">
+          <h2>전 체 요 약</h2>
+          <ul class="list-style">
+            <li>Node.js도 Big Data Storage에 접근할 수 있다
+              <ul>
+                <li>되도록 Thrift 추천</li>
+                <li>최근 Presto는 http protocol을 이용하니 node-java 사용하지 않고 개발 가능</li>
+              </ul>
+            </li>
+            <li>node-java는 나쁘지 않은 선택이지만 확인할 것이 많다
+              <ul>
+                <li>서버 배포 여부</li>
+                <li>JVM, JDK 버전 등</li>
+              </ul>
+            </li>
+            <li>Grid
+              <ul>
+                <li>역시 Handsontable이 좋지만, 최신 버전은 다량의 데이터를 처리하기에는 무리가 있다</li>
+              </ul>
+            </li>
+            <li>Node.js와 Hive 사이에 Connection을 유지하기 위해서는 많은 노력이 필요</li>
+          </ul>
+          <h5 style="font-size: 20px;">JSHS2 많이 써주시고, 많이 도와 주세요</h5>
+        </section>
+        <section>
+          <h2>그래서, 앞으로는?</h2>
+        </section>
+        <section class="style-jejuhallasan">
+          <h3 class="pink-red-text">OpenSource</h3>
+          <h5>JSHS2 말고, Galleon 전체를</h5>
+        </section>
+        <section class="style-jejuhallasan">
+          <h2 class="pink-red-text">JSHS2</h2>
+          <h4>SASL-PLAIN 지원, kerberos 지원, LDAP 지원</h4>
+          <h5>이 부분은 중요도가 조금 떨어진다고 판단하여, 추 후 지원할 예정</h5>
+        </section>
+        <section class="style-nanumpenscript">
+          <h1>감사합니다!!</h1>
+        </section>
+        <section>
+          <h1>Q & A</h1>
+        </section>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript" src="components/bower/reveal.js/lib/js/head.min.js"></script>
+  <script type="text/javascript" src="components/bower/reveal.js/lib/js/classList.js"></script>
+  <script type="text/javascript" src="components/bower/reveal.js/js/reveal.js"></script>
+  <script type="text/javascript" src="components/playnode/playnode/js/index.js"></script>
+  <script src="http://localhost:33729/livereload.js"></script>
+</html>

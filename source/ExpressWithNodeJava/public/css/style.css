@@ -1,0 +1,14 @@
+html, body {
+  height: 100%; }
+
+.starter-template {
+  margin-top: 55px; }
+  .starter-template .action-container .btn {
+    margin-right: 10px; }
+    .starter-template .action-container .btn:last-child {
+      margin-right: 0; }
+  .starter-template .result-container {
+    padding-top: 10px; }
+    .starter-template .result-container textarea {
+      outline: none;
+      width: 100%; }

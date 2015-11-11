@@ -1,0 +1,6 @@
+{
+  "newcap": false,
+  "node": true,
+  "esnext": true,
+  "predef": ["module", "requireEx", "requireX", "templateEx", "templateX", "stacktrace", "appLogger"]
+}
