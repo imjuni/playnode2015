@@ -29,7 +29,7 @@ node_modules
 .idea
 
 # Bower
-components/bower
+# components/bower
 
 # Image (because legal issue, portrait right etc ..)
 # 이미지는 삭제 예정입니다
