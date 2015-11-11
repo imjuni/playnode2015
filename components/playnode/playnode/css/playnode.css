@@ -8,7 +8,7 @@
 @import url(./nanumpenscript.min.css);
 body {
   overflow: auto; }
-  body .reveal h1:lang(kr), body .reveal h2:lang(kr), body .reveal h3:lang(kr), body .reveal h4:lang(kr), body .reveal h5:lang(kr), body .reveal h6:lang(kr) {
+  body .reveal h1:lang(kr), body .reveal h2:lang(kr), body .reveal h3:lang(kr), body .reveal h4:lang(kr), body .reveal h5:lang(kr), body .reveal h6:lang(kr), body .reveal p:lang(kr), body .reveal ul:lang(kr), body .reveal li:lang(kr) {
     text-transform: none;
     font-family: "Local Noto Sans KR", Ubuntu, "sans-serif"; }
 
