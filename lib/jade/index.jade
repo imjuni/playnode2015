@@ -562,9 +562,8 @@ html(lang="kr")
           h3 이러한 과정을 거쳐서!
         section
           h3 Galleon
-          section
-            video
-              source(data-src="components/playnode/playnode/movie/galleon_002.mp4")
+          video
+            source(data-src="components/playnode/playnode/movie/galleon_002.mp4")
         section
           h1 고생스럽지만,
           h4 순수 Node.js로
@@ -593,7 +592,7 @@ html(lang="kr")
             h4 다량의 loop을 수행하며 Excel XML을 생성하고,
             h2.style-kopubtatang.blood-red-text.shadow Node.js에 부적합
         section
-          h2 그래서
+          h2.style-kopubtatang.blood-red-text.shadow EXCEL 싫어!
         section(data-background="components/playnode/playnode/images/unknown/pic012_2.png")
           h2 전 체 요 약
           ul.list-style
@@ -623,56 +622,6 @@ html(lang="kr")
           h1 감사합니다!!
         section
           h1 Q & A
-
-  //-
-    section
-              h1 2015년, 11월 기준
-              h3 node-java는 염원하던 비동기 실행 기능이 포함되어 있으며
-              h5 Promise 패턴으로 함수 실행 결과를 얻을 수 있습니다
-            section
-              h2 그래서,
-              pre
-                code(data-trim, contenteditable)
-                  | co(function* () {
-                  |  var jdbcWrapperEx = yield java.newInstancePromise('com.imjuni.jdbc.JdbcWrapper');
-                  |  var helloWorldEx = yield jdbcWrapperEx.getHelloWorldPromise();
-                  | &nbsp;
-                  |  var longlong = yield jdbcWrapperEx.longRunTaskPromise();
-                  | &nbsp;
-                  |  console.log(longlong);
-                  | &nbsp;
-                  |  return longlong;
-                  |}).then(function (longlong) {
-                  |  console.log('Ex: ' + longlong);
-                  |}).catch(function (err) {
-                  |  console.log(err.message);
-                  |  console.log(err.stack);
-                  |});
-
-  //-
-    thrif에 대한 특징 (비슷한 일을 하는 것에 대한 조사)
-    thrift를 선택할 수 밖에 없는 이유
-    hive에 대한 소개
-    R에 대한 소개
-    Big Data에 대한 소개
-    browser로 socket.io에 대한 bypass
-    architecture에 대한 소개
-    Node.js 버전 관련 이야기
-    나쁜점에 대해서
-      -> excel 만들기 등
-
-    - impala와의 connection managing 관련 이야기를 함
-    - 왜 instant connecting을 하는지 등
-    - browser로 bypass를 할 때 어느 정도까지 테스트를 하는지
-    - grid에 대한 간단한 소개
-
-    angular, express에 대한 내용은 빼고
-    node.js에 대한 big data 관련 내용을 더 포커스를 맞춰서 이야기함
-
-    제목 수정
-
-    Node.JS를 이용해서 BIG DATA 세계를 헤엄친 이야기
-
 
   script(type="text/javascript", src="components/bower/reveal/lib/js/head.min.js")
   script(type="text/javascript", src="components/bower/reveal/lib/js/classList.js")

@@ -90,11 +90,11 @@
     dependencies: [
       // Zoom in and out with Alt+click
       {
-        src: 'components/bower/reveal.js/plugin/zoom-js/zoom.js',
+        src: 'components/bower/reveal/plugin/zoom-js/zoom.js',
         async: true
       },
       {
-        src: 'components/bower/reveal.js/plugin/highlight/highlight.js',
+        src: 'components/bower/reveal/plugin/highlight/highlight.js',
         async: true,
         callback: function() {
           hljs.initHighlightingOnLoad();
