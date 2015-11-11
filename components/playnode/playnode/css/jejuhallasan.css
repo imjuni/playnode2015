@@ -5,5 +5,5 @@
   font-family: 'Local Jeju Hallasan';
   font-style: normal;
   font-weight: 400;
-  src: url(components/playnode/playnode/fonts/jeju_hallasan/JejuHallasan-Regular.eot);
-  src: url(components/playnode/playnode/fonts/jeju_hallasan/JejuHallasan-Regular.eot?#iefix) format("embedded-opentype"), url(components/playnode/playnode/fonts/jeju_hallasan/JejuHallasan-Regular.woff2) format("woff2"), url(components/playnode/playnode/fonts/jeju_hallasan/JejuHallasan-Regular.woff) format("woff"), url(components/playnode/playnode/fonts/jeju_hallasan/JejuHallasan-Regular.ttf) format("truetype"); }
+  src: url(../fonts/jeju_hallasan/JejuHallasan-Regular.eot);
+  src: url(../fonts/jeju_hallasan/JejuHallasan-Regular.eot?#iefix) format("embedded-opentype"), url(../fonts/jeju_hallasan/JejuHallasan-Regular.woff2) format("woff2"), url(../fonts/jeju_hallasan/JejuHallasan-Regular.woff) format("woff"), url(../fonts/jeju_hallasan/JejuHallasan-Regular.ttf) format("truetype"); }
